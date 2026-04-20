@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>珈琲 時の間</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ヘッダー：左にLOGO、右にナビ -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-logo">珈琲 時の間</div>
+      <nav class="header-nav">
+        <a href="#omoi">想い</a>
+        <a href="#menu">メニュー</a>
+        <a href="#teatime">ティータイム</a>
+        <a href="#gallery">ギャラリー</a>
+        <a href="#note">常連ノート</a>
+        <a href="#access">アクセス</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-body">
+
+    <!-- メインビジュアル：枠線ボックス＋中央テキスト -->
+    <section class="hero">
+      <div class="hero-box">
+      <div class="hero-slider">
+        <img src="images/hero1.png" class="slide active">
+        <img src="images/hero2.png" class="slide">
+        <img src="images/hero3.png" class="slide">
+      </div>  
+        <div class="hero-overlay">
+          
+          <p class="hero-catch">「ゆったりとした時間を過ごせる喫茶店」</p>
+        </div>
+
+       
+
+        <button id="soundToggle" class="cup-btn">
+            ☕
+            <span class="cup-text">BGM ON</span>
+            </button>
+      </div>
+    </section>
+
+    <!-- 想い -->
+    <section class="section" id="omoi">
+      <h2 class="section-heading">想い</h2>
+      <div class="section-rule"></div>
+      <div class="omoi-body">
+        <p>
+          年齢や立場に関係なく、誰でも安心して過ごせる場所。長く通ってくださる方も、久しぶりの方も、初めて来てくださった方も、
+          いつでも帰ってこられる喫茶店でありたいと考えています。コーヒーや甘いもの、音楽や作品を通して、人と人がゆるやかにつながる時間を大切にしています。
+        </p>
+        
+          
+        </p>
+      </div>
+    </section>
+
+    <!-- メニュー -->
+    <section class="section section-shaded" id="menu">
+      <h2 class="section-heading">メニュー</h2>
+      <div class="menu-grid">
+
+        <div class="menu-col">
+          <div class="menu-col-head">お飲み物</div>
+          <ul class="menu-list">
+            <li><span class="mn">ブレンドコーヒー</span><span class="mp">450円</span></li>
+            <li><span class="mn">シングルオリジン</span><span class="mp">550円</span></li>
+            <li><span class="mn">カフェオレ</span><span class="mp">500円</span></li>
+            <li><span class="mn">紅茶</span><span class="mp">450円</span></li>
+          </ul>
+        </div>
+
+        <div class="menu-col">
+          <div class="menu-col-head">お食事</div>
+          <ul class="menu-list">
+            <li><span class="mn">モーニングセット</span><span class="mp">650円</span></li>
+            <li><span class="mn">トースト</span><span class="mp">350円</span></li>
+            <li><span class="mn">サンドイッチ</span><span class="mp">600円</span></li>
+          </ul>
+        </div>
+
+        <div class="menu-col">
+          <div class="menu-col-head">甘いもの</div>
+          <ul class="menu-list">
+            <li><span class="mn">プリン</span><span class="mp">400円</span></li>
+            <li><span class="mn">あんみつ</span><span class="mp">500円</span></li>
+            <li><span class="mn">ぜんざい</span><span class="mp">500円</span></li>
+            <li><span class="mn">チーズケーキ</span><span class="mp">450円</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ティータイム -->
+    <section class="section" id="teatime">
+      <h2 class="section-heading">ティータイム</h2>
+      <div class="section-rule"></div>
+      <div class="teatime-row">
+        <span class="teatime-time">15:00〜17:00</span>
+        <span class="teatime-desc">本日のスイーツと珈琲セット（SNSでお知らせ）</span>
+      </div>
+    </section>
+
+    <!-- ギャラリー 時の間 -->
+    <section class="section section-shaded" id="gallery">
+  <h2 class="section-heading">ギャラリー 時の間</h2>
+  <div class="section-rule"></div>
+
+  <div class="gallery-block">
+
+    <!-- 作品展示 -->
+    <div class="gallery-set">
+      <p class="gallery-title">作品展示</p>
+      <div class="slider">
+        <img class="slide active" src="images/work1.png">
+        <img class="slide" src="images/work2.png">
+        <img class="slide" src="images/work3.png">
+      </div>
+    </div>
+
+    <!-- 珈琲教室 -->
+    <div class="gallery-set">
+      <p class="gallery-title">珈琲教室</p>
+      <div class="slider">
+        <img class="slide active" src="images/cafe1.png">
+        <img class="slide" src="images/cafe2.png">
+        <img class="slide" src="images/cafe3.png">
+      </div>
+    </div>
+
+    <!-- イベント風景 -->
+    <div class="gallery-set">
+      <p class="gallery-title">イベント風景</p>
+      <div class="slider">
+        <img class="slide active" src="images/event1.png">
+        <img class="slide" src="images/event2.png">
+        <img class="slide" src="images/event3.png">
+      </div>
+    </div>
+
+  </div>
+  <p class="gallery-caption">
+写真や陶芸、絵画など作家さんの作品を展示しています。珈琲教室や音楽イベントも不定期で開催しています。
+　</p>
+</section>
+
+    <!-- 常連ノート -->
+   <section class="section" id="note">
+  <h2 class="section-heading">常連様ノート</h2>
+  <div class="section-rule"></div>
+
+  <div class="note-cards">
+    <div class="note-card">今日は久しぶりに来ました</div>
+    <div class="note-card">元気にしています</div>
+  </div>
+
+  <!-- 投稿UI -->
+  <div class="note-form">
+   <div class="note-form">
+  <input type="text" class="note-name" placeholder="お名前（任意）">
+  <textarea placeholder="ひとことメッセージを書いてください…"></textarea>
+  <button class="note-btn">投稿する</button>
+  </div>
+  </div>
+
+  <!-- 説明文 -->
+  <p class="note-description">
+    この場所に来てくださる皆様の、ゆるやかなつながりの場です。
+  </p>
+　</section>
+
+    <!-- アクセス -->
+    <section class="section section-shaded" id="access">
+      <h2 class="section-heading">アクセス</h2>
+      <div class="section-rule"></div>
+      <div class="access-inner">
+        <div class="access-info">
+          <p>〒863-00223　熊本県天草市中央新町15-7</p>
+          <p>営業時間：9:00〜18:00</p>
+          <p>定休日：木曜日</p>
+          <p class="access-sub">・駐車場あり</p>
+          <p class="access-sub">・段差の少ない入口</p>
+          <p class="access-sub">・初めての方もお気軽にお越しください</p>
+        </div>
+        <div class="access-map">
+          <div class="map-box">
+            <!--
+              ★ Googleマップを表示するには下の iframe を使ってください。
+                 Googleマップで店舗を検索 →「共有」→「地図を埋め込む」→ コードをコピーして貼り替え
+            -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d707.7437875092577!2d130.18873621224088!3d32.45621737421235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x353fee545b5e1d8b%3A0x246e84f1341925fb!2z44CSODYzLTAwMjMg54aK5pys55yM5aSp6I2J5biC5Lit5aSu5paw55S677yR77yV4oiS77yX!5e0!3m2!1sja!2sjp!4v1775885720361!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- SNS（Instagram風フィード） -->
+<section class="section section-shaded" id="sns">
+
+  <h2 class="section-heading">日々の記録</h2>
+  <div class="section-rule"></div>
+
+  <div class="insta-grid">
+
+    <div class="insta-post">
+      <img src="images/hero1.png" alt="">
+      <div class="insta-body">
+        <p class="insta-text">今日のブレンドコーヒー</p>
+        <p class="insta-tag">#珈琲時の間 #カフェ時間</p>
+        <p class="insta-like">♥ 24</p>
+      </div>
+    </div>
+
+    <div class="insta-post">
+      <img src="images/gallery2.png" alt="">
+      <div class="insta-body">
+        <p class="insta-text">静かな午後の店内</p>
+        <p class="insta-tag">#カフェ巡り #落ち着く空間</p>
+        <p class="insta-like">♥ 31</p>
+      </div>
+    </div>
+
+    <div class="insta-post">
+      <img src="images/gallery3.png" alt="">
+      <div class="insta-body">
+        <p class="insta-text">本日のイベント風景</p>
+        <p class="insta-tag">#イベント #珈琲時間</p>
+        <p class="insta-like">♥ 18</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+    <!-- SNSセクション -->
+<section class="section section-shaded" id="sns">
+  <h2 class="section-heading">SNS</h2>
+  <div class="section-rule"></div>
+
+  <div class="sns-box">
+
+    <div class="sns-card">
+      <p class="sns-title">Instagram</p>
+      <p class="sns-text">現在準備中です</p>
+    </div>
+
+    <div class="sns-card">
+      <p class="sns-title">最新情報</p>
+      <p class="sns-text">イベントや限定メニューは今後こちらでお知らせ予定</p>
+    </div>
+
+    <div class="sns-card">
+      <p class="sns-title">フォロー</p>
+      <button class="sns-btn">準備中</button>
+    </div>
+
+  </div>
+</section>
+
+  </div><!-- /page-body -->
+
+  <!-- フッター -->
+  <footer class="footer">
+    <p>© 珈琲 時の間</p>
+  </footer>
+
+
+<!-- ★音はここに残す -->
+<audio id="bgm" loop>
+  <source src="jazz.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ★ここに1つだけscript -->
+<script>
+/* ===== BGM ===== */
+const bgm = document.getElementById('bgm');
+const soundBth = document.getElementById('soundToggle');
+
+let isPlaying = false;
+
+soundBth.addEventListener('click', () => {
+  if (isPlaying) {
+    bgm.pause();
+    soundBth.innerHTML="☕ <span class='cup-text'>BGM OFF</span>";
+  } else {
+    bgm.volume = 0.25;
+    bgm.play();
+    soundBth.innerHTML = "☕ <span class='cup-text'>BGM ON</span>";
+  }
+  isPlaying = !isPlaying;
+});
+
+document.body.addEventListener('click', () => {
+  bgm.volume = 0.25;
+}, { once: true });
+
+/* ===== ノート ===== */
+const noteBtn = document.querySelector('.note-btn');
+const textarea = document.querySelector('.note-form textarea');
+const nameInput = document.querySelector('.note-name');
+const list = document.querySelector('.note-cards');
+
+const MAX_NOTES = 6;
+let notes = JSON.parse(localStorage.getItem('notes')) || [];
+
+renderNotes();
+
+noteBtn.addEventListener('click', () => {
+  const text = textarea.value.trim();
+  const name = nameInput.value.trim() || '匿名';
+  if (text === '') return;
+
+  const date = new Date();
+  const formattedDate =
+    date.getFullYear() + '.' +
+    String(date.getMonth() + 1).padStart(2, '0') + '.' +
+    String(date.getDate()).padStart(2, '0');
+
+  notes.unshift({ name, text, date: formattedDate });
+
+  if (notes.length > MAX_NOTES) notes.pop();
+
+  localStorage.setItem('notes', JSON.stringify(notes));
+  renderNotes();
+
+  textarea.value = '';
+  nameInput.value = '';
+});
+
+function renderNotes() {
+  list.innerHTML = '';
+  notes.forEach(note => {
+    const div = document.createElement('div');
+    div.classList.add('note-card');
+    div.innerHTML = `
+      <div class="note-meta">
+        <span class="note-name-display">${note.name}</span>
+        <span class="note-date">${note.date}</span>
+      </div>
+      <div class="note-text">${note.text}</div>
+    `;
+    list.appendChild(div);
+  });
+}
+
+/* ===== ギャラリーだけキラキラ ===== */
+function startGallerySlider(slider) {
+  const images = slider.querySelectorAll("img");
+  let index = 0;
+
+  images.forEach((img, i) => {
+    img.classList.remove("active");
+    if (i === 0) img.classList.add("active");
+  });
+
+  setInterval(() => {
+    createSparkle(slider);
+
+    images[index].classList.remove("active");
+    index = (index + 1) % images.length;
+    images[index].classList.add("active");
+
+  }, 10000); // ← 少しゆっくりにした
+}
+
+/* キラキラ */
+function createSparkle(container) {
+  const sparkle = document.createElement("div");
+  sparkle.classList.add("sparkle");
+
+  for (let i = 0; i < 10; i++) {
+    const dot = document.createElement("span");
+
+    dot.style.left = Math.random() * 100 + "%";
+    dot.style.bottom = "0px";
+
+    sparkle.appendChild(dot);
+  }
+
+  container.appendChild(sparkle);
+
+  setTimeout(() => {
+    sparkle.remove();
+  }, 2000);
+}
+
+/* 実行（ギャラリーだけ） */
+document.querySelectorAll(".slider").forEach(startGallerySlider);
+
+/* ===== メインゆっくりスライド ===== */
+function startHeroSlider(slider) {
+  const images = slider.querySelectorAll("img");
+  let index = 0;
+
+  images.forEach((img, i) => {
+    img.classList.remove("active");
+    if (i === 0) img.classList.add("active");
+  });
+
+  setInterval(() => {
+    images[index].classList.remove("active");
+    index = (index + 1) % images.length;
+    images[index].classList.add("active");
+  }, 9000); // ←かなりゆっくり
+}
+
+/* 実行 */
+document.querySelectorAll(".slider, .hero-slider").forEach(startHeroSlider);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1277 @@
+/* ============================================================
+   珈琲 時の間 — style.css
+   ワイヤーフレーム忠実再現版
+   ============================================================ */
+
+/* ---------- カラー変数 ---------- */
+:root {
+  --bg:           #f5f2ec;
+  --bg-shaded:    #eeebe3;
+  --border:       #c8bfad;
+  --border-dark:  #9e8f7a;
+  --text:         #2e2519;
+  --text-soft:    #5c4f3d;
+  --text-faint:   #8c7d6a;
+  --brown:        #6b4c2a;
+  --brown-light:  #a07d54;
+  --header-bg:    #f0ece4;
+}
+
+/* ---------- リセット ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.85;
+  font-size: 14px;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ============================================================
+   ヘッダー
+   ============================================================ */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  height: 44px;
+}
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--brown);
+  letter-spacing: 0.1em;
+}
+.header-nav {
+  display: flex;
+  gap: 24px;
+}
+.header-nav a {
+  font-size: 12px;
+  color: var(--text-soft);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.header-nav a:hover { color: var(--brown); }
+
+/* ============================================================
+   ページ本体
+   ============================================================ */
+.page-body {
+  margin-top: 44px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   セクション共通
+   ============================================================ */
+.section {
+  padding: 36px 0;
+  border-top: 1px solid var(--border);
+}
+.section-shaded {
+  background: var(--bg-shaded);
+  margin-left: -24px;
+  margin-right: -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.section-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.section-rule {
+  height: 1px;
+  background: var(--border-dark);
+  margin-bottom: 18px;
+}
+
+/* ============================================================
+   メインビジュアル
+   ============================================================ */
+.hero {
+  padding: 20px 0 0;
+}
+.hero-box {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  border: 1px solid var(--border-dark);
+  background: #ddd8cf;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.hero-label {
+  font-size: 30px;
+  color: #fff;
+  letter-spacing: 0.15em;
+}
+.hero-catch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 0.3em;
+  background: none;
+  text-shadow: 0 2px 6px(0,0,0,0.8);
+  padding: 4px 16px;
+}
+
+/* ============================================================
+   想い
+   ============================================================ */
+.omoi-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 15px;
+  color: var(--text-soft);
+  line-height: 2;
+}
+
+/* ============================================================
+   メニュー：3列ボックス
+   ============================================================ */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border-dark);
+  margin-top: 6px;
+}
+.menu-col {
+  padding: 14px 16px;
+  border-right: 1px solid var(--border-dark);
+}
+.menu-col:last-child { border-right: none; }
+.menu-col-head {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 7px;
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.menu-list li {
+  display: flex;
+  align-items: baseline;
+  font-size: 12px;
+  color: var(--text-soft);
+  padding: 3px 0;
+  gap: 4px;
+}
+.menu-list li::before {
+  content: '・';
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+.mn { flex: 1; }
+.mp {
+  white-space: nowrap;
+  color: var(--text-faint);
+  font-feature-settings: "tnum";
+  min-width: 42px;
+  text-align: right;
+}
+
+/* ============================================================
+   ティータイム
+   ============================================================ */
+.teatime-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  border: 1px solid var(--border-dark);
+  padding: 12px 18px;
+  background: var(--bg);
+}
+.teatime-time {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--brown);
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+.teatime-desc {
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+/* ============================================================
+   ギャラリー
+   ============================================================ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.gallery-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--border-dark);
+  background: #ddd8cf;
+  overflow: hidden;
+}
+.gallery-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+.gallery-dummy {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.gallery-dummy svg { width: 100%; height: 100%; }
+.gallery-label {
+  font-size: 12px;
+  color: var(--text-soft);
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.gallery-caption {
+  font-size: 12px;
+  color: var(--text-soft);
+  line-height: 1.9;
+}
+
+/* ============================================================
+   常連ノート
+   ============================================================ */
+.note-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.note-card {
+  border: 1px solid var(--border-dark);
+  background: var(--bg);
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--text-soft);
+  letter-spacing: 0.04em;
+  line-height: 1.8;
+}
+.note-sub {
+  font-size: 12px;
+  color: var(--text-faint);
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   アクセス
+   ============================================================ */
+.access-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 24px;
+  align-items: start;
+}
+.access-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-soft);
+  line-height: 1.9;
+}
+.access-info p { margin: 0; }
+.access-sub { color: var(--text-faint); font-size: 11px; }
+
+.map-box {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border: 1px solid var(--border-dark);
+  background: #ddd8cf;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-box::before,
+.map-box::after {
+  content: '';
+  position: absolute;
+  background: var(--border-dark);
+  opacity: 0.4;
+  width: 141%;
+  height: 1px;
+  pointer-events: none;
+}
+.map-box::before { transform: rotate(25deg); }
+.map-box::after  { transform: rotate(-25deg); }
+.map-box iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  border: 0;
+}
+.map-label {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  background: rgba(245,242,236,0.6);
+  padding: 2px 10px;
+}
+
+/* ============================================================
+   フッター
+   ============================================================ */
+.footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-faint);
+  letter-spacing: 0.15em;
+}
+
+.hero-catch {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero-label {
+  opacity: 0;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-slider {
+  position: absolute;
+  inset: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+
+.sound-btn {
+  background: rgba(216, 195, 165, 0.85);
+  border: 1px solid #a98b6f;
+  color: #3b2f2a;
+
+  padding: 8px 12px;
+  border-radius: 20px;
+
+  font-size: 12px;
+  cursor: pointer;
+
+  font-family: "Yu Mincho", serif;
+  z-index: 9999;
+}
+
+.hero-box {
+  position: relative;
+}
+
+/* メイン画像の上にボタンを置く */
+.sound-btn.inside {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+
+  z-index: 10;
+}
+
+/* 湯気ボタン */
+.steam-btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  background: #5b4636;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.steam-btn::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+  transform: translateX(-50%);
+  animation: steam 2.5s infinite ease-in-out;
+  opacity: 0.5;
+}
+
+@keyframes steam {
+  0% {
+    transform: translateX(-50%) translateY(10px) scale(0.8);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px) scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-20px) scale(0.9);
+    opacity: 0;
+  }
+}
+.cup-btn {
+  position: absolute;  /* ←ここが重要 */
+  bottom: 20px;
+  right: 20px;
+
+  background: #5b4636;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 0 #2b1f18;
+  overflow: visible;
+  z-index: 10;
+}
+
+/* テキスト */
+.cup-text {
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* 湯気（1本目） */
+.cup-btn::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 45%;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(255,255,255,0.5), transparent 70%);
+  animation: steam1 2.5s infinite ease-in-out;
+  opacity: 0.4;
+}
+
+/* 湯気（2本目） */
+.cup-btn::after {
+  content: "";
+  position: absolute;
+  top: -35px;
+  left: 60%;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+  animation: steam2 3s infinite ease-in-out;
+  opacity: 0.3;
+}
+
+/* アニメ */
+@keyframes steam1 {
+  0%   { transform: translateY(10px) scale(0.8); opacity: 0; }
+  50%  { opacity: 0.5; }
+  100% { transform: translateY(-30px) scale(1.2); opacity: 0; }
+}
+
+@keyframes steam2 {
+  0%   { transform: translateY(10px) scale(0.7); opacity: 0; }
+  50%  { opacity: 0.4; }
+  100% { transform: translateY(-40px) scale(1.3); opacity: 0; }
+}
+/* =========================
+   コーヒーカップボタン最終版
+   ========================= */
+.cup-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+
+  background: #5b4636;
+  color: #fff;
+  border: none;
+
+  padding: 10px 14px;
+  border-radius: 20px;
+
+  font-size: 14px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  box-shadow: 0 4px 0 #2b1f18;
+  z-index: 20;
+}
+
+/* テキスト */
+.cup-text {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* 湯気① */
+.cup-btn::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 40%;
+
+  width: 12px;
+  height: 12px;
+
+  background: radial-gradient(circle, rgba(255,255,255,0.6), transparent 70%);
+  animation: steam1 2.5s infinite ease-in-out;
+}
+
+/* 湯気② */
+.cup-btn::after {
+  content: "";
+  position: absolute;
+  top: -26px;
+  left: 60%;
+
+  width: 10px;
+  height: 10px;
+
+  background: radial-gradient(circle, rgba(255,255,255,0.5), transparent 70%);
+  animation: steam2 3s infinite ease-in-out;
+}
+
+/* アニメーション */
+@keyframes steam1 {
+  0%   { transform: translateY(10px); opacity: 0; }
+  50%  { opacity: 0.6; }
+  100% { transform: translateY(-25px); opacity: 0; }
+}
+
+@keyframes steam2 {
+  0%   { transform: translateY(10px); opacity: 0; }
+  50%  { opacity: 0.4; }
+  100% { transform: translateY(-30px); opacity: 0; }
+}
+/* =========================
+   強制上書き（最優先）
+   ========================= */
+.hero-box {
+  position: relative;
+}
+
+/* 既存の変な影響をリセット */
+.cup-btn {
+  all: unset;
+}
+
+/* コーヒーボタン完全版 */
+.cup-btn {
+  position: absolute !important;
+  bottom: 15px;
+  right: 15px;
+
+  background: #5b4636;
+  color: #fff;
+  border-radius: 20px;
+
+  padding: 10px 14px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 14px;
+  box-shadow: 0 4px 0 #2b1f18;
+  z-index: 50;
+}
+
+.cup-text {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* 湯気① */
+.cup-btn::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 40%;
+
+  width: 12px;
+  height: 12px;
+
+  background: radial-gradient(circle, rgba(255,255,255,0.6), transparent 70%);
+  animation: steam1 2.5s infinite ease-in-out;
+}
+
+/* 湯気② */
+.cup-btn::after {
+  content: "";
+  position: absolute;
+  top: -26px;
+  left: 52%;
+
+  width: 10px;
+  height: 10px;
+
+  background: radial-gradient(circle, rgba(255,255,255,0.5), transparent 70%);
+  animation: steam2 3s infinite ease-in-out;
+}
+
+@keyframes steam1 {
+  0%   { transform: translateY(10px); opacity: 0; }
+  50%  { opacity: 0.6; }
+  100% { transform: translateY(-25px); opacity: 0; }
+}
+
+@keyframes steam2 {
+  0%   { transform: translateY(10px); opacity: 0; }
+  50%  { opacity: 0.4; }
+  100% { transform: translateY(-30px); opacity: 0; }
+}
+/* 湯気① 強化版 */
+.cup-btn::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 35%;
+
+  width: 18px;
+  height: 18px;
+
+  background: radial-gradient(circle, rgba(255,255,255,0.9), transparent 70%);
+  filter: blur(2px);
+
+  animation: steam1 2s infinite ease-in-out;
+}
+
+/* 湯気② 強化版 */
+.cup-btn::after {
+  content: "";
+  position: absolute;
+  top: -32px;
+  left: 55%;
+
+  width: 16px;
+  height: 16px;
+
+  background: radial-gradient(circle, rgba(255,255,255,0.85), transparent 70%);
+  filter: blur(2px);
+
+  animation: steam2 2.2s infinite ease-in-out;
+}
+@keyframes steam1 {
+  0%   { transform: translateY(15px) scale(0.8); opacity: 0; }
+  40%  { opacity: 0.9; }
+  100% { transform: translateY(-40px) scale(1.3); opacity: 0; }
+}
+
+@keyframes steam2 {
+  0%   { transform: translateY(15px) scale(0.7); opacity: 0; }
+  40%  { opacity: 0.7; }
+  100% { transform: translateY(-45px) scale(1.4); opacity: 0; }
+}
+.menu-list li {
+  display: flex;
+  align-items: center;
+}
+
+/* 名前 */
+.mn {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+/* ⭐ ここがポイント（名前の後に線） */
+.mn::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px dotted #c8bfad;
+  margin: 0 10px;
+}
+
+/* 価格 */
+.mp {
+  white-space: nowrap;
+  font-weight: bold;
+}
+.note-description {
+  text-align: center;
+  margin-top: 20px;
+  color: #6b5b4d;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.note-form input {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: 1px solid #c8bfad;
+  border-radius: 6px;
+}
+
+.note-meta {
+  font-size: 12px;
+  color: #8b7d6b;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.note-text {
+  font-size: 14px;
+}
+/* 横並びレイアウト */
+.note-form {
+  max-width: 800px;
+  margin: 30px auto 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* 名前 */
+.note-form input {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+/* メッセージ */
+.note-form textarea {
+  flex: 1;
+  height: 40px;
+  resize: none;
+}
+
+/* ボタン */
+.note-btn {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+/* ズレ防止 */
+.note-form input,
+.note-form textarea,
+.note-btn {
+  box-sizing: border-box;
+}
+
+.note-form input,
+.note-form textarea,
+.note-btn {
+  height: 40px;
+}
+
+.note-form input,
+.note-form textarea,
+.note-btn {
+  border-radius: 6px;
+}
+
+.note-form {
+  max-width: 800px;
+  margin: 30px auto 0;
+  display: flex;
+  gap: 10px;
+  align-items: center; /* ← 中央揃え（これが重要） */
+}
+
+/* 全部同じ高さにする */
+.note-form input,
+.note-form textarea,
+.note-btn {
+  height: 42px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.note-form input,
+.note-form textarea,
+.note-btn {
+  height: 42px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* 👇ここに追加 */
+.note-form {
+  align-items: stretch; /* ← ここが超重要 */
+}
+.note-form input {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.note-form textarea {
+  padding: 10px;
+}
+
+.note-form input,
+.note-form textarea {
+  border: 2px solid #8b6f47; /* ← ボタンと同じ濃さに */
+  background: #fffdf8;
+}
+
+.note-btn {
+  border: 2px solid #8b6f47;
+}
+
+.note-form textarea {
+  resize: none;
+  line-height: normal; /* ← inputと揃えるため */
+  padding-top: 10px;
+}
+
+.note-form {
+  max-width: 800px;
+  margin: 30px auto 0;
+  display: flex;
+  gap: 10px;
+  align-items: stretch; /* ← これ */
+}
+
+.note-form input {
+  width: 150px;
+  flex-shrink: 0;
+  height: 42px;
+  padding: 0 10px;
+}
+
+.note-form textarea {
+  flex: 1;
+  height: 42px;
+  padding: 10px;
+  resize: none;
+}
+
+.note-btn {
+  width: 120px;
+  height: 42px;
+}
+
+.note-form input,
+.note-form textarea,
+.note-btn {
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 2px solid #8b6f47;
+}
+
+/* ノート全体を日記帳っぽく */
+.note-cards {
+  max-width: 100%; /* ← これが重要 */
+  margin: 0;
+}
+
+/* 1投稿 */
+.note-card {
+  padding: 15px 10px;
+  border-bottom: 1px dashed #c8bfad;
+}
+
+/* 上の情報（名前＋日付） */
+.note-meta {
+  font-size: 12px;
+  color: #8b7d6b;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 名前 */
+.note-name-display {
+  font-weight: bold;
+}
+
+/* 本文 */
+.note-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #2e2e2e;
+}
+
+/* 全体にうっすら線（ノート感） */
+.note-cards {
+  background: repeating-linear-gradient(
+    to bottom,
+    #fffdf8,
+    #fffdf8 28px,
+    #f0eae0 29px
+  );
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* 全セクション共通の幅 */
+.section-inner {
+  max-width: 1000px; /* ← ここを基準にする */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.note-card {
+  transition: 0.3s;
+}
+
+.note-card:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.sns-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.sns-card {
+  border: 1px solid #8b6f47;
+  background: #fffdf8;
+  padding: 14px;
+  text-align: center;
+}
+
+.sns-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.sns-text {
+  font-size: 12px;
+  color: #5c4f3d;
+}
+
+.sns-btn {
+  margin-top: 8px;
+  padding: 6px 12px;
+  border: 1px solid #8b6f47;
+  background: #f5f2ec;
+  cursor: pointer;
+}
+
+/* インスタ風フィード */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.insta-post {
+  border: 1px solid #8b6f47;
+  background: #fffdf8;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.insta-post img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.insta-body {
+  padding: 10px;
+}
+
+.insta-text {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.insta-tag {
+  font-size: 11px;
+  color: #8c7d6a;
+  margin-bottom: 6px;
+}
+
+.insta-like {
+  font-size: 12px;
+  color: #6b4c2a;
+}
+
+.section-heading {
+  text-align: center;
+}
+
+.section-heading {
+  text-align: center;
+  letter-spacing: 0.15em;
+  font-family: 'Noto Serif JP', serif;
+}
+
+.section-heading {
+  font-size: 20px;
+}
+
+.teatime-row {
+  justify-content: center;
+}
+
+.gallery-block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.gallery-set {
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #5c4f3d;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border: 1px solid #8b6f47;
+}
+
+.slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.slider img.active {
+  opacity: 1;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border: 1px solid #8b6f47;
+  background: #eee; /* ← 念のため保険（空白防止） */
+}
+
+.slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.slider img.active {
+  opacity: 1;
+}
+
+/* ===== スライド共通 ===== */
+.hero-slider,
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 画像を重ねる */
+.hero-slider img,
+.slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  transition: opacity 2.0s ease; /* ←ふわっと */
+}
+
+/* 表示中 */
+.hero-slider img.active,
+.slider img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* ===== キラキラ演出 ===== */
+.sparkle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.sparkle span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  animation: sparkle 2.0s ease forwards;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 1;
+    transform: scale(0.5) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-20px);
+  }
+}
+
+/* ===== スライド共通（これだけ正解） ===== */
+.hero-slider img,
+.slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  transition: opacity 2.5s ease;
+}
+
+.hero-slider img.active,
+.slider img.active {
+  opacity: 1;
+}
+/* ===== 強制修正（メイン表示復活） ===== */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 500px; /* ←少し大きくする */
+  overflow: hidden;
+}
+
+.hero-slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+}
+
+.hero-slider img.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;     /* 縦中央 */
+  justify-content: center; /* 横中央 */
+
+  text-align: center;
+}
+.sparkle span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+
+  animation: bubble 1.5s ease-out forwards;
+}
+
+@keyframes bubble {
+  0% {
+    transform: scale(0.5) translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5) translateY(-40px);
+    opacity: 0;
+  }
+}
